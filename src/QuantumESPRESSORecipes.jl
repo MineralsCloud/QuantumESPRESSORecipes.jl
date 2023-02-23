@@ -67,4 +67,19 @@ end
     end
 end
 
+@userplot PressurePlot
+@recipe function f(plot::PressurePlot)
+    framestyle --> :box
+    legend_foreground_color --> nothing
+    grid --> nothing
+    seriestype --> :scatter
+    xguide --> "step"
+    yguide --> "pressure"
+    label --> ""
+    data = first(plot.args)
+    steps = eachindex(data)
+    xticks --> steps
+    return steps, data
+end
+
 end
