@@ -50,4 +50,21 @@ end
     end
 end
 
+@userplot IterationTimePlot
+@recipe function f(plot::IterationTimePlot)
+    framestyle --> :box
+    legend_foreground_color --> nothing
+    grid --> nothing
+    seriestype --> :scatter
+    xguide --> "iteration"
+    yguide --> "time"
+    df = first(plot.args)
+    for (i, subdf) in enumerate(groupby(df, :step))
+        @series begin
+            label --> string("iteration ", i)
+            subdf.iteration, subdf.time
+        end
+    end
+end
+
 end
