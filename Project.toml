@@ -8,6 +8,7 @@ QuantumESPRESSO = "95228164-aa68-11e9-35aa-d79ea5c4658d"
 RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
 [compat]
+QuantumESPRESSO = "0.8"
 julia = "1"
 
 [extras]
