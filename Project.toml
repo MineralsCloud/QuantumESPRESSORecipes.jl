@@ -5,6 +5,7 @@ version = "0.1.0"
 
 [deps]
 CrystallographyBase = "93b1d1cd-a8ea-4aa5-adb1-b2407ea0ba8d"
+CrystallographyRecipes = "6d201c90-cd51-4bcb-ba42-504028e2f5e7"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 QuantumESPRESSO = "95228164-aa68-11e9-35aa-d79ea5c4658d"
 RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
