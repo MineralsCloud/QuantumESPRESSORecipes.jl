@@ -12,9 +12,9 @@ RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
 [compat]
 CrystallographyBase = "0.14"
-CrystallographyRecipes = "0.1, 0.2"
+CrystallographyRecipes = "0.2"
 DataFrames = "1"
-QuantumESPRESSO = "0.10, 0.11"
+QuantumESPRESSO = "0.11"
 RecipesBase = "1"
 julia = "1"
 
