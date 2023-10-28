@@ -1,5 +1,5 @@
 using DataFrames: groupby
-using QuantumESPRESSO.Outputs.PWscf
+using QuantumESPRESSO.PWscf
 
 @userplot DecomposedEnergyPlot
 @recipe function f(plot::DecomposedEnergyPlot)
