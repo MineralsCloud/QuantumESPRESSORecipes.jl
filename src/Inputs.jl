@@ -1,6 +1,6 @@
 using CrystallographyBase: Cell
 using CrystallographyRecipes
-using QuantumESPRESSO.Inputs.PWscf: PWInput
+using QuantumESPRESSO.PWscf: PWInput
 
 @userplot CellPlot
 @recipe function f(plot::CellPlot)
