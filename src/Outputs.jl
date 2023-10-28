@@ -1,6 +1,39 @@
 using DataFrames: groupby
 using QuantumESPRESSO.PWscf
 
+@userplot EnergyConvergenceIterationPlot
+@recipe function f(plot::EnergyConvergenceIterationPlot)
+    framestyle --> :box
+    legend_foreground_color --> nothing
+    grid --> nothing
+    legend_position --> :top
+    xguide --> "total number of iterations"
+    yguide --> "energy"
+    vectors = first(plot.args)
+    xlims --> (1, cumsum(length.(vectors))[end])
+    total_iterations = 0
+    for (i, vector) in enumerate(vectors)
+        last_total = total_iterations
+        total_iterations += length(vector)
+        @series begin
+            label --> "SCF step $i"
+            seriestype --> :scatter
+            markersize --> 2
+            markerstrokewidth --> 0
+            (last_total + 1):total_iterations, vector
+        end
+        @series begin
+            seriestype --> :vline
+            linestyle --> :dot
+            seriescolor := :black  # Fix the axis color
+            linewidth := 1  # This is an axis, don't change its width
+            z_order --> :back
+            label := ""
+            [total_iterations]
+        end
+    end
+end
+
 @userplot DecomposedEnergyPlot
 @recipe function f(plot::DecomposedEnergyPlot)
     framestyle --> :box
