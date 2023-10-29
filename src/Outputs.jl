@@ -9,7 +9,6 @@ using QuantumESPRESSO.PWscf
     xguide --> "total number of iterations"
     yguide --> "energy"
     vectors = first(plot.args)
-    xlims --> (1, cumsum(length.(vectors))[end])
     total_iterations = 0
     for (i, vector) in enumerate(vectors)
         last_total = total_iterations
