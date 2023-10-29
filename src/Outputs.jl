@@ -6,7 +6,6 @@ using QuantumESPRESSO.PWscf
     framestyle --> :box
     legend_foreground_color --> nothing
     grid --> nothing
-    legend_position --> :top
     xguide --> "total number of iterations"
     yguide --> "energy"
     vectors = first(plot.args)
