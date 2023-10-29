@@ -8,14 +8,15 @@ using QuantumESPRESSO.PWscf
     grid --> nothing
     xguide --> "total number of iterations"
     yguide --> "energy"
-    vectors = first(plot.args)
+    vectors = plot.args[end]  # Use the last argument, not the first one! See http://juliaplots.org/RecipesBase.jl/stable/types/#User-Recipes-2
     total_iterations = 0
     for (i, vector) in enumerate(vectors)
         last_total = total_iterations
         total_iterations += length(vector)
         @series begin
             label --> "SCF step $i"
-            seriestype --> :scatter
+            seriestype --> :path
+            markershape --> :circle
             markersize --> 2
             markerstrokewidth --> 0
             (last_total + 1):total_iterations, vector
