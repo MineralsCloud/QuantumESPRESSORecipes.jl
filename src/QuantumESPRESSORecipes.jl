@@ -2,7 +2,7 @@ module QuantumESPRESSORecipes
 
 using RecipesBase: @userplot, @recipe, @series
 
-include("Inputs.jl")
-include("Outputs.jl")
+include("inputs.jl")
+include("outputs.jl")
 
 end
