@@ -21,7 +21,7 @@ end
     framestyle --> :box
     legend_foreground_color --> nothing
     grid --> nothing
-    xguide --> "total number of iterations"
+    xguide --> "total number of iterations in SCF calculations"
     yguide --> "energy"
     vectors = plot.args[end]  # Use the last argument, not the first one! See http://juliaplots.org/RecipesBase.jl/stable/types/#User-Recipes-2
     total_iterations = 0
