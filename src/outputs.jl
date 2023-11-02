@@ -1,6 +1,21 @@
 using DataFrames: groupby
 using QuantumESPRESSO.PWscf
 
+@userplot EcutTestPlot
+@recipe function f(plot::EcutTestPlot)
+    framestyle --> :box
+    legend_foreground_color --> nothing
+    grid --> false
+    seriestype --> :scatter
+    total_energies = last(plot.args)
+    cutoff_energies = length(plot.args) == 2 ? first(plot.args) : eachindex(total_energies)
+    if length(plot.args)
+        xguide --> "cutoff energy"
+    end
+    yguide --> "total energy"
+    return cutoff_energies, total_energies
+end
+
 @userplot EnergyConvergenceIterationPlot
 @recipe function f(plot::EnergyConvergenceIterationPlot)
     framestyle --> :box
